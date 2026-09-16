@@ -7,7 +7,7 @@
     "type": "object",
     "additionalProperties": false,
     "properties": {
-      "script": { "type": "string", "description": "Absolute path to core/scripts/action_log.py" },
+      "script": { "type": "string", "description": "Absolute path to managed/action_log.py" },
       "logPath": { "type": "string", "description": "Action log file; leave unset to derive from OPENCLAW_STATE_DIR" },
       "python": { "type": "string", "description": "Python interpreter, default python3" },
       "consent": { "type": "string", "description": "Consent label recorded on every line" },

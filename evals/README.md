@@ -1,13 +1,13 @@
 # Regression tests and agent trials
 
-Run from the repository root, using Python 3.10+ and standard-library modules:
+Run from the repository root, using Python 3.11+ and standard-library modules:
 
 ```sh
 python3 -m unittest discover -s tests -v
 ```
 
-This exercises Python adapters, real local tar/gzip against disposable synthetic
-files, and the offline scorer. All external commands in adapter tests are mocked.
+This exercises the managed controls and adapters, the outbound log, encrypted recovery
+(when age is installed), and the offline scorer. External services use test doubles.
 No API key, paid model run, WhatsApp message or live spreadsheet is used.
 
 The GitHub Actions workflow runs the same offline checks on Linux and macOS
@@ -20,6 +20,9 @@ releases. Adding the workflow locally does not run GitHub Actions.
 ## Agent behavior evaluation
 
 cases.json contains eight starter tasks, fault setups and human review rubrics.
+These are trial requirements, not claims that every behavior is already automated.
+A trial driver must translate actual managed results and errors into the scorer
+format without changing their meaning; the repository does not include that live driver.
 Run each through the eventual agent runtime against isolated synthetic systems.
 Reset the test environment between trials. Keep the same prompt/config revision,
 tool set and data when comparing candidates. A default minimum of three trials
@@ -65,7 +68,7 @@ code; bookkeeping failures only warn.
 
 ```sh
 python3 evals/run.py --case sheet_unavailable --requested-model provider/model \
-    --input client/operating/AGENTS.md --input evals/cases.json \
+    --input managed/runtime.py --input evals/cases.json \
     -- <the command that runs the trial>
 ```
 

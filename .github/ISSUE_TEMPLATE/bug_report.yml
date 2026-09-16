@@ -1,0 +1,26 @@
+name: Report a bug / Reportar un error
+description: A reproducible problem with the public kit. Never include client data.
+body:
+  - type: markdown
+    attributes:
+      value: "For security issues, email info@puestario.com. Do not post credentials, phone numbers, client files or raw private logs. / No publiques claves, teléfonos, archivos de clientes ni registros privados."
+  - type: input
+    id: version
+    attributes:
+      label: Release and OpenClaw version / Versiones
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps, expected result and actual result / Pasos y resultados
+      description: Use made-up data and a small example. Include OS and Python version.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Before submitting / Antes de enviar
+      options:
+        - label: I removed private data and credentials. / Eliminé los datos privados y las claves.
+          required: true

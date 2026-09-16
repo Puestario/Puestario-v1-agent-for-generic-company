@@ -1,10 +1,4 @@
-"""OpenClaw runtime pieces, driven with node against the real Python scripts.
-
-The plugin's hook logic (runtimes/openclaw/plugins/action-log/hooks.js) and the
-memory-bootstrap handler import nothing from OpenClaw, so plain node can call
-them with synthetic events. Both directions: a configured plugin logs and lets
-the send through; an unconfigured or unwritable one cancels it.
-"""
+"""Outbound OpenClaw log gate: real Node hooks and Python log, synthetic events."""
 import json
 import os
 import shutil
@@ -15,11 +9,10 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT / "core" / "scripts"))
-import action_log  # noqa: E402
+sys.path.insert(0, str(ROOT))
+from managed import action_log  # noqa: E402
 
 PLUGIN = ROOT / "runtimes/openclaw/plugins/action-log"
-HOOK = ROOT / "runtimes/openclaw/hooks/memory-bootstrap"
 NODE = shutil.which("node")
 
 DRIVER = r"""
@@ -62,7 +55,7 @@ class ActionLogPluginTests(unittest.TestCase):
         return {"kind": "sent", "event": {"to": to, "content": content, "success": success}, "ctx": {"channelId": channel}}
 
     def configured_env(self):
-        return {"ACTION_LOG_SCRIPT": str(ROOT / "core/scripts/action_log.py"),
+        return {"ACTION_LOG_SCRIPT": str(ROOT / "managed/action_log.py"),
                 "OPENCLAW_STATE_DIR": str(Path(self.temp.name) / "state")}
 
     def test_configured_plugin_logs_before_send_and_outcome_after(self):
@@ -106,7 +99,7 @@ class ActionLogPluginTests(unittest.TestCase):
     def test_plugin_config_overrides_env_and_log_path_can_be_explicit(self):
         explicit = Path(self.temp.name) / "explicit.jsonl"
         result = self.drive([self.sending()], env={"OPENCLAW_STATE_DIR": str(Path(self.temp.name) / "state")},
-                            plugin_config={"script": str(ROOT / "core/scripts/action_log.py"),
+                            plugin_config={"script": str(ROOT / "managed/action_log.py"),
                                            "logPath": str(explicit), "consent": "owner:test"})
         self.assertEqual(result["out"][0]["result"], None, result["warnings"])
         self.assertTrue(explicit.exists())
@@ -136,64 +129,10 @@ class ActionLogPluginTests(unittest.TestCase):
         self.assertIn('from "openclaw/plugin-sdk/plugin-entry"', entry)
         self.assertIn('api.on("message_sending"', entry)
         self.assertIn('api.on("message_sent"', entry)
-        for text in ((PLUGIN / "hooks.js").read_text(), entry, (HOOK / "handler.js").read_text()):
+        for text in ((PLUGIN / "hooks.js").read_text(), entry):
             self.assertNotIn(".openclaw", text)
             self.assertNotIn("homedir", text)
 
-
-@unittest.skipIf(NODE is None, "node is required to test the OpenClaw runtime pieces")
-class MemoryBootstrapHookTests(unittest.TestCase):
-    def setUp(self):
-        self.temp = tempfile.TemporaryDirectory()
-        self.addCleanup(self.temp.cleanup)
-        self.workspace = Path(self.temp.name) / "workspace"
-        shutil.copytree(ROOT / "core" / "scripts", self.workspace / "core" / "scripts")
-        shutil.copytree(ROOT / "client" / "memory", self.workspace / "client" / "memory")
-
-    def run_hook(self, event):
-        script = r"""
-import handler from FILE_URL;
-const event = JSON.parse(process.argv[1]);
-await handler(event);
-console.log(JSON.stringify(event.context ?? null));
-""".replace("FILE_URL", json.dumps((HOOK / "handler.js").as_uri()))
-        run = subprocess.run([NODE, "--input-type=module", "-e", script, json.dumps(event)],
-                             capture_output=True, text=True, timeout=60)
-        self.assertEqual(run.returncode, 0, run.stderr)
-        return json.loads(run.stdout.strip().splitlines()[-1])
-
-    def test_brief_is_injected_as_memory_md_and_written_to_disk(self):
-        context = self.run_hook({"type": "agent", "action": "bootstrap",
-                                 "context": {"workspaceDir": str(self.workspace), "bootstrapFiles": [
-                                     {"name": "AGENTS.md", "path": "x", "content": "y", "missing": False}]}})
-        self.assertEqual([f["name"] for f in context["bootstrapFiles"]], ["AGENTS.md", "MEMORY.md"])
-        brief = context["bootstrapFiles"][1]
-        self.assertFalse(brief["missing"])
-        self.assertIn("# Memory brief", brief["content"])
-        self.assertRegex(brief["content"], r"## Decisions in force \([1-9]\d*\)")
-        self.assertIn("Coach Lalo", brief["content"])
-        self.assertRegex(brief["content"], r"## Current learnings \([1-9]\d*\)")
-        on_disk = self.workspace / "client" / "memory" / ".brief" / "MEMORY.md"
-        self.assertEqual(on_disk.read_text(), brief["content"])
-        self.assertEqual(Path(brief["path"]), on_disk)
-
-    def test_failed_script_injects_a_notice_not_silence(self):
-        (self.workspace / "core" / "scripts" / "memory_log.py").unlink()
-        context = self.run_hook({"type": "agent", "action": "bootstrap",
-                                 "context": {"workspaceDir": str(self.workspace), "bootstrapFiles": []}})
-        self.assertEqual(len(context["bootstrapFiles"]), 1)
-        self.assertIn("Memory brief unavailable", context["bootstrapFiles"][0]["content"])
-        self.assertIn("Say so in the first reply", context["bootstrapFiles"][0]["content"])
-
-    def test_other_events_are_ignored(self):
-        context = self.run_hook({"type": "command", "action": "new",
-                                 "context": {"workspaceDir": str(self.workspace), "bootstrapFiles": []}})
-        self.assertEqual(context["bootstrapFiles"], [])
-
-    def test_hook_manifest(self):
-        text = (HOOK / "HOOK.md").read_text()
-        self.assertIn("name: memory-bootstrap", text)
-        self.assertIn('"events": ["agent:bootstrap"]', text)
 
 
 if __name__ == "__main__":

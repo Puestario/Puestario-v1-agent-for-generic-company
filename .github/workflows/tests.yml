@@ -20,16 +20,24 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+          fetch-depth: 0
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: ${{ matrix.python }}
-      - name: Check shell syntax
-        run: bash -n client/scripts/backup_local.sh
-      - name: Placeholder count matches the tree
-        run: python tests/ci_checks.py placeholders
-      - name: core/rules has zero placeholders
-        run: python tests/ci_checks.py core-rules
-      - name: Session-load files fit their size budget
-        run: python tests/ci_checks.py size-budget
+      - name: Require Node and install verified encryption test tools
+        run: |
+          node --version
+          node --check runtimes/openclaw/plugins/puestario-control/bridge.js
+          node --check runtimes/openclaw/plugins/puestario-control/index.js
+          python tests/install_age_test_tool.py "$RUNNER_TEMP/puestario-age"
+          echo "$RUNNER_TEMP/puestario-age" >> "$GITHUB_PATH"
+      - name: Confirm real encryption tests can run
+        run: |
+          age --version
+          age-keygen --version
+      - name: Check current release, instructions, and guide links
+        run: python tests/ci_checks.py all
+      - name: Check public source and fetched history for accidental private data
+        run: python tests/public_scan.py --history
       - name: Run offline tests
         run: python -m unittest discover -s tests -v

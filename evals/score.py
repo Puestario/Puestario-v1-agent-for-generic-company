@@ -26,6 +26,8 @@ def grade(record, case):
         errors.append("tool_calls must be an integer")
     if record.get("provenance") != "runtime":
         errors.append("not a runtime trial")
+    if record.get("input_fingerprint_stable") is not True:
+        errors.append("input fingerprint changed or was not verified")
     if record.get("review_passed") is not True:
         errors.append("human outcome review not passed")
     if record.get("final_status") != case["expected_status"]:

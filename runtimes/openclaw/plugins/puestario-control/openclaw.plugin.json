@@ -1,0 +1,13 @@
+{
+  "id": "puestario-control",
+  "name": "Puestario managed desk",
+  "version": "0.1.0",
+  "contracts": {"tools": ["puestario"]},
+  "activation": {"onStartup": true},
+  "description": "Verified founder controls, scoped business tools and persistent jobs.",
+  "configSchema": {
+    "type": "object", "additionalProperties": false,
+    "required": ["root", "release", "python"],
+    "properties": {"root":{"type":"string"},"release":{"type":"string"},"python":{"type":"string"}}
+  }
+}
