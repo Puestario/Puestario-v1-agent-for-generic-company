@@ -1,0 +1,10 @@
+{
+  "name": "@blazecamp/openclaw-action-log",
+  "version": "1.0.0",
+  "description": "OpenClaw plugin: hash-chained action log before every outbound message",
+  "type": "module",
+  "private": true,
+  "openclaw": {
+    "extensions": ["./index.js"]
+  }
+}

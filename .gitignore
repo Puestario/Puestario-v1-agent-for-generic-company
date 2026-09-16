@@ -1,0 +1,81 @@
+# Runtime & secrets
+.openclaw/
+.env
+.env.*
+*.env
+secrets/
+credentials/
+
+# Memory & personal data (never commit real data)
+memory/*.md
+!memory/README.md
+
+# Client & business data
+knowledge-base/vault-*.md
+contacts/
+reports/daily/*.md
+!reports/daily/README.md
+staff/
+
+# Media & generated files
+media/
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.mp4
+*.mov
+tmp/
+*.tmp
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Node
+node_modules/
+.npm/
+
+# Logs
+*.log
+*.jsonl
+!memory/README.md
+
+# Eval trial logs and records (may hold client data; sanitize before sharing)
+evals/logs/
+evals/records/
+
+# Backup files
+*.backup
+*.bak
+
+# Claude & OpenClaw runtime
+.claude/cache/
+.claude/history.jsonl
+.clawhub/
+.agents/
+skills-lock.json
+openclaw-workspace-state.json
+
+# Restructured layout — never commit filled-in client data
+client/memory/*.md
+!client/memory/README.md
+# Session brief written by the OpenClaw memory-bootstrap hook
+client/memory/.brief/
+# The two memory logs ship with the template (seed lines, validated by tests)
+!client/memory/learnings.jsonl
+!client/memory/decisions.jsonl
+client/knowledge-base/vault-*.md
+client/reports/daily/*.md
+!client/reports/daily/README.md
+client/contacts/
+client/staff/
