@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="840" viewBox="0 0 1280 840" role="img" aria-labelledby="title desc" xml:lang="es">
+<title id="title">Abre el agente.</title><desc id="desc">Un mensaje. Reglas claras. Tu equipo mantiene el control. OpenClaw → Puestario → Herramientas aprobadas. El código es público. Los archivos de la empresa no van a GitHub.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto-start-reverse"><path d="M1 1L7 4L1 7" fill="none" stroke="#8A9CAA" stroke-width="1.5"/></marker></defs>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#102A43}.title{font-size:44px;font-weight:700;letter-spacing:-1.5px}.body{font-size:18px}.label{font-size:12px;font-weight:700;letter-spacing:1.7px;fill:#607587}.head{font-size:22px;font-weight:700}.small{font-size:14px;fill:#486174}.line{fill:none;stroke:#8A9CAA;stroke-width:2;marker-end:url(#arrow)}.panel{fill:white;stroke:#DCE4E8;stroke-width:1.5}</style>
+<rect width="1280" height="840" rx="24" fill="#F6F5F1"/>
+<g transform="translate(1010 32) scale(.21)"><g transform="translate(32 32) scale(1)"><g id="wordmark" transform="translate(-24 -12.5)"><path id="wordmark-letter-P" fill="#102A43" fill-rule="evenodd" d="M24 17H72C100 17 115 30.5 115 52.5C115 76 98 89 72 89H52V129H24Z M52 40V67H71.5C81.8 67 87 61.5 87 53.5C87 45.5 81.5 40 72 40Z"/><path id="wordmark-letter-U" fill="#102A43" fill-rule="evenodd" d="M136 17H164V85.5C164 99.2 170.4 107 183.8 107C197 107 203 98.4 203 85V17H231V87C231 115.5 214.5 131 183.2 131C152 131 136 115 136 87Z"/><path id="wordmark-letter-E" fill="#102A43" fill-rule="evenodd" d="M258 17H339V40H286V61H330V84H286V106H339V129H258Z"/><path id="wordmark-letter-S" fill="#102A43" fill-rule="evenodd" d="M389.7727,129.445 C383.3652,127.8918 375.234,124.0372 370.0765,120.1081 C366.1762,117.1368 359,108.4112 359,106.6401 C359,105.5576 378.5636,94 380.3959,94 C380.8351,94 383.2376,96.2724 385.7347,99.0498 C388.2318,101.8272 392.1255,105.0446 394.3874,106.1996 C399.3493,108.7334 410.2666,109.7272 415.2115,108.0952 C422.5525,105.6725 425.8642,98.6396 421.9858,93.709 C419.294,90.287 417.0877,89.364 399.0627,84.1188 C382.1358,79.1932 374.3398,75.329 368.93,69.1831 C361.6364,60.8971 360.4133,47.6967 365.9055,36.5404 C372.5045,23.136 386.7812,16 407,16 C423.6679,16 435.3929,20.3839 445.75,30.4885 C449.1875,33.8421 452,37.119 452,37.7703 C452,39.0342 432.3544,50.9735 430.2474,50.9901 C429.5585,50.9956 427.3392,49.1674 425.3156,46.9276 C418.6918,39.5958 410.1662,36.8011 401.0764,38.9817 C395.4386,40.3341 391,44.527 391,48.5 C391,53.3945 395.4493,56.7603 406.3296,60.0966 C435.0604,68.9065 437.5599,69.9187 443.5311,75.1615 C448.9045,79.8794 451.2605,85.2706 451.7635,94 C452.7862,111.7478 440.8181,125.804 421.2008,129.8949 C414.0187,131.3926 396.7897,131.146 389.7727,129.445 Z"/><path id="wordmark-letter-T" fill="#102A43" fill-rule="evenodd" d="M468 17H556V40H526V129H498V40H468Z"/><path id="wordmark-letter-A" fill="#D85A30" fill-rule="evenodd" d="M558 129L603.5 17H627L672 129H642L615 57L587 129Z"/><path id="wordmark-letter-R" fill="#102A43" fill-rule="evenodd" d="M693 17H736.5C766.5 17 785 28.5 785 52C785 67 776.5 78 761 84L787 129H756L732.5 89H722V129H693Z M722 40H736.5C749 40 756.5 43.5 756.5 53.5C756.5 63 749 68 736.5 68H722Z"/><path id="wordmark-letter-I" fill="#D85A30" fill-rule="evenodd" d="M813 17H839V129H813Z"/><g transform="translate(869 12.5)"><g id="wordmark-O"><path id="wordmark-O-quadrant-1" fill="#102A43" d="M35 0H50Q57 0 57 7V25Q57 32 50 32H44Q34 32 34 42V46Q34 53 27 53H8Q0 53 0 45V35Q0 31 3 28L28 3Q31 0 35 0Z"/><path id="wordmark-O-quadrant-2" fill="#102A43" d="M35 0H50Q57 0 57 7V25Q57 32 50 32H44Q34 32 34 42V46Q34 53 27 53H8Q0 53 0 45V35Q0 31 3 28L28 3Q31 0 35 0Z" transform="translate(128 0) scale(-1 1)"/><path id="wordmark-O-quadrant-3" fill="#102A43" d="M35 0H50Q57 0 57 7V25Q57 32 50 32H44Q34 32 34 42V46Q34 53 27 53H8Q0 53 0 45V35Q0 31 3 28L28 3Q31 0 35 0Z" transform="translate(0 120) scale(1 -1)"/><path id="wordmark-O-quadrant-4" fill="#102A43" d="M35 0H50Q57 0 57 7V25Q57 32 50 32H44Q34 32 34 42V46Q34 53 27 53H8Q0 53 0 45V35Q0 31 3 28L28 3Q31 0 35 0Z" transform="translate(128 120) scale(-1 -1)"/><path id="wordmark-O-core" fill="#D85A30" d="M84 60C84 71.0457 75.0457 80 64 80C52.9543 80 44 71.0457 44 60C44 48.9543 52.9543 40 64 40C75.0457 40 84 48.9543 84 60Z"/></g></g></g></g>
+</g>
+<text x="56" y="85" class="title" text-anchor="start">Abre el agente.</text><text x="56" y="122" class="body" text-anchor="start">Un mensaje. Reglas claras. Tu equipo mantiene el control.</text>
+<path d="M56 150H1224" stroke="#DCE4E8"/>
+<text x="72" y="198" class="label" text-anchor="start">TU EQUIPO</text><text x="460" y="198" class="label" text-anchor="start">LA MAC DE LA EMPRESA</text><text x="968" y="198" class="label" text-anchor="start">SERVICIOS EN LÍNEA</text>
+<rect x="56" y="220" width="280" height="355" rx="22" class="panel"/>
+<rect x="151" y="257" width="90" height="130" rx="18" fill="#102A43"/>
+<rect x="160" y="268" width="72" height="98" rx="9" fill="#EDF3F3"/>
+<rect x="171" y="289" width="52" height="28" rx="8" fill="#D85A30"/>
+<path d="M172 309V323L186 314" fill="#D85A30"/>
+<path d="M176 337H216M176 346H206" stroke="#9AAFB9" stroke-width="3" stroke-linecap="round"/>
+<circle cx="196" cy="377" r="3" fill="#EDF3F3"/>
+<text x="196" y="430" class="head" text-anchor="middle">Una persona pide</text><text x="196" y="463" class="body" text-anchor="middle">«Lee las ventas de hoy».</text><text x="196" y="533" class="small" text-anchor="middle">Solo personas aprobadas</text>
+<rect x="440" y="220" width="414" height="355" rx="22" fill="#102A43"/>
+<rect x="464" y="248" width="366" height="76" rx="13" fill="#1D3C55"/>
+<circle cx="496" cy="282" r="10" fill="#D85A30"/>
+<text x="521" y="279" style="fill:white;font-size:22px;font-weight:bold">OpenClaw</text>
+<text x="521" y="305" style="fill:#CAD7E0;font-size:16px">Recibe el chat real</text>
+<path d="M647 325V343" stroke="#8A9CAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="464" y="348" width="366" height="88" rx="13" fill="#FFF1E8"/>
+<path d="M488 370L503 376V389Q500 400 488 405Q476 400 473 389V376Z" fill="none" stroke="#D85A30" stroke-width="2"/>
+<path d="M480 387L486 393L497 382" fill="none" stroke="#D85A30" stroke-width="2"/>
+<text x="521" y="382" class="head" text-anchor="start">Permisos de Puestario</text><text x="521" y="409" class="small" text-anchor="start">Revisa quién puede hacer qué</text>
+<path d="M647 437V455" stroke="#8A9CAA" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="464" y="460" width="366" height="88" rx="13" fill="#1D3C55"/>
+<text x="486" y="493" style="fill:white;font-size:22px;font-weight:bold">Herramientas aprobadas</text>
+<text x="486" y="521" style="fill:#CAD7E0;font-size:16px">Solo leen o cambian lo permitido</text>
+<rect x="954" y="248" width="270" height="140" rx="20" class="panel"/>
+<circle cx="987" cy="279" r="8" fill="#D85A30"/>
+<text x="978" y="321" class="head" text-anchor="start">Modelo de IA</text><text x="978" y="353" class="small" text-anchor="start">Ayuda a entender la tarea</text>
+<rect x="954" y="432" width="270" height="140" rx="20" class="panel"/>
+<rect x="978" y="457" width="16" height="16" rx="4" fill="#102A43"/>
+<text x="978" y="508" class="head" text-anchor="start">Apps aprobadas</text><text x="978" y="540" class="small" text-anchor="start">Solo los datos elegidos</text>
+<path d="M338 390H434" class="line" marker-start="url(#arrow)"/><text x="388" y="373" class="small" text-anchor="middle">pide / recibe</text>
+<path d="M856 287H948" class="line" marker-start="url(#arrow)"/><text x="904" y="265" class="small" text-anchor="middle">contexto</text>
+<path d="M856 499H948" class="line" marker-start="url(#arrow)"/><text x="904" y="476" class="small" text-anchor="middle">acceso limitado</text>
+<path d="M647 577V608" class="line"/>
+<rect x="56" y="618" width="720" height="107" rx="18" class="panel"/>
+<path d="M83 649H106L115 657H132V691H83Z" fill="#E9EFF2" stroke="#91A3AF"/>
+<text x="153" y="656" class="label" text-anchor="start">ARCHIVOS PRIVADOS</text><text x="153" y="691" class="body" text-anchor="start">Personas · instrucciones · notas · tareas · accesos</text>
+<path d="M778 672H832" class="line"/>
+<rect x="841" y="618" width="383" height="107" rx="18" fill="#EAEFEA"/>
+<text x="861" y="655" class="label" text-anchor="start">COPIA CIFRADA DE RECUPERACIÓN</text><text x="861" y="690" class="small" text-anchor="start">Se guarda aparte. La clave, en otro lugar.</text>
+<text x="56" y="770" class="body" text-anchor="start">El código es público. Los archivos de la empresa no van a GitHub.</text><text x="56" y="805" class="small" text-anchor="start">Mapa educativo · Versión piloto · La IA puede recibir contexto aprobado.</text>
+</svg>

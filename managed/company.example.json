@@ -1,0 +1,21 @@
+{
+  "company_id": "example-office",
+  "company_name": "Example Office",
+  "agent_name": "Alex",
+  "timezone": "America/New_York",
+  "language": "English and Spanish",
+  "account_id": "default",
+  "model": "anthropic/claude-sonnet-4-6",
+  "fallbacks": [],
+  "instructions": "Help the approved team with the resources each person is allowed to use.",
+  "founders": [
+    {
+      "name": "Administrator One \u2014 replace this example",
+      "number": "+12025550101"
+    },
+    {
+      "name": "Administrator Two \u2014 replace this example",
+      "number": "+12025550102"
+    }
+  ]
+}

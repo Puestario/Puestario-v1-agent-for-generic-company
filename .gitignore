@@ -66,16 +66,10 @@ evals/records/
 skills-lock.json
 openclaw-workspace-state.json
 
-# Restructured layout — never commit filled-in client data
-client/memory/*.md
-!client/memory/README.md
-# Session brief written by the OpenClaw memory-bootstrap hook
-client/memory/.brief/
-# The two memory logs ship with the template (seed lines, validated by tests)
-!client/memory/learnings.jsonl
-!client/memory/decisions.jsonl
-client/knowledge-base/vault-*.md
-client/reports/daily/*.md
-!client/reports/daily/README.md
-client/contacts/
-client/staff/
+# Managed company state and encrypted recovery artifacts
+/managed-company/
+*.age
+*.agekey
+company.json
+control.json
+release-manifest.json

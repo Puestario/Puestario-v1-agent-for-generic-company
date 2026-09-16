@@ -21,6 +21,7 @@ def synthetic_records():
             "trial_id": "1", "requested_model": "test/primary",
             "actual_model": "test/fallback" if fallback else "test/primary",
             "config_revision": "synthetic-config", "provenance": "runtime",
+            "input_fingerprint_stable": True,
             "fallback_reason": "test fault" if fallback else None,
             "fallback_disclosed": fallback,
             "tool_calls": 2, "latency_ms": 100, "cost_usd": 0.01,
@@ -34,6 +35,12 @@ def synthetic_records():
 
 
 class EvalTests(unittest.TestCase):
+    def test_changed_or_missing_input_fingerprint_cannot_pass(self):
+        for value in (False, None, "true"):
+            records = synthetic_records()
+            records[0]["input_fingerprint_stable"] = value
+            self.assertFalse(scorer.score(records, CASES, 1)["passed"])
+
     def test_complete_records_score_and_measure(self):
         result = scorer.score(synthetic_records(), CASES, min_trials=1)
         self.assertTrue(result["passed"])

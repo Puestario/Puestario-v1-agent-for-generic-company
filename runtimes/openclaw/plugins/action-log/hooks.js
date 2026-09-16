@@ -2,7 +2,7 @@
 // be unit-tested with plain node. index.js wires them into the plugin SDK.
 //
 // message_sending: write the action line BEFORE delivery by calling
-//   core/scripts/action_log.py record. If the line is not on disk, cancel the
+//   managed/action_log.py record. If the line is not on disk, cancel the
 //   send (fail closed). The message text goes to the script on stdin so the
 //   log holds its sha256 and byte count, never the text itself.
 // message_sent:    write the outcome line (best effort). The action line is
@@ -10,7 +10,7 @@
 //
 // Configuration, in order of precedence: plugin config, then the gateway's
 // environment. Nothing defaults to a home folder.
-//   script   / ACTION_LOG_SCRIPT   absolute path to core/scripts/action_log.py (required)
+//   script   / ACTION_LOG_SCRIPT   absolute path to managed/action_log.py (required)
 //   logPath  / ACTION_LOG          the log file (or leave unset and set OPENCLAW_STATE_DIR)
 //   python   / ACTION_LOG_PYTHON   interpreter, default "python3"
 //   consent  / -                   recorded on every line, default "openclaw:message_sending"

@@ -1,0 +1,9 @@
+{
+  "release": "0.2.0-pilot",
+  "openclaw_version": "2026.5.27",
+  "openclaw_npm_integrity": "sha512-2N93zhdAo88KAbHt6T7KvYXf4s7XIkYXBgv1npYpn7e1Y9FvrtgtpsA38my9rtFW+70uXEojRPX5/OqnuDqJPw==",
+  "age_version": "1.3.2",
+  "sandbox_tag": "puestario-sandbox:2026.09.16",
+  "sandbox_base": "debian:bookworm-slim@sha256:88200866dfff7ea7f5cbcb6ec7c8a701889efe6fe859fe64d6990e4b07ea4171",
+  "clean_mac_pilot": "required-before-client-handover"
+}
