@@ -1,4 +1,4 @@
-# agent-desk-template
+# Puestario Agent Desk Template v1
 
 A working template for an AI operations agent that talks to real people on
 behalf of a business, on real channels, with access to real systems.
@@ -212,3 +212,9 @@ A setting that can be confirmed two ways will be confirmed the cheap way.
 Test in both directions before believing either. Does the thing still work, and
 is the thing actually blocked. A config that validates is not evidence. A
 command exiting 0 is not evidence. A blocked attempt is evidence.
+
+---
+
+## License
+
+MIT. See [LICENSE](LICENSE). Built by [Puestario](https://puestario.com).
